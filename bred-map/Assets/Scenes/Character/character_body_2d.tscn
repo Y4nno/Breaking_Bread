@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://lnwm6bg73g7w"]
+
+[ext_resource type="Script" uid="uid://c67vu3yg51n70" path="res://Assets/Scritps/character_body_2d_control.gd" id="1_c2cei"]
+[ext_resource type="Texture2D" uid="uid://mr7xtulnl1fs" path="res://Assets/Scenes/Sprites/attack-01.png" id="1_hucc4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2cei"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_c2cei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -15)
+shape = SubResource("CapsuleShape2D_c2cei")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -3)
+zoom = Vector2(2, 2)
+
+[node name="Anims" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anims"]
+root_node = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Anims"]
+position = Vector2(3, -17)
+texture = ExtResource("1_hucc4")

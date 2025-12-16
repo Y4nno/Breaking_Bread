@@ -1,0 +1,153 @@
+[gd_scene load_steps=34 format=3 uid="uid://1s8m0lnqjp5j"]
+
+[ext_resource type="Texture2D" uid="uid://cc50n7xxomnkp" path="res://Assets/Scenes/Sprites/ground_1.png" id="1_u2qlx"]
+[ext_resource type="Texture2D" uid="uid://bh1h4ohk3k3l4" path="res://Assets/Scenes/Sprites/ground_2.png" id="2_f6n8j"]
+[ext_resource type="Texture2D" uid="uid://12rbei14e6hl" path="res://Assets/Scenes/Sprites/ground_10.png" id="3_8gu1k"]
+[ext_resource type="Texture2D" uid="uid://dpcbf0r0egv40" path="res://Assets/Scenes/Sprites/tree.png" id="3_vu1if"]
+[ext_resource type="Texture2D" uid="uid://cfeo8anmfh2hs" path="res://Assets/Scenes/Sprites/rock_2.png" id="4_iedpi"]
+[ext_resource type="Texture2D" uid="uid://pjke3f07acj2" path="res://Assets/Scenes/Sprites/ground_3.png" id="4_k7an7"]
+[ext_resource type="Texture2D" uid="uid://by0ucgrhldpmd" path="res://Assets/Scenes/Sprites/rock_1.png" id="5_acrny"]
+[ext_resource type="Texture2D" uid="uid://byt00clf6ynrj" path="res://Assets/Scenes/Sprites/ground_4.png" id="5_qvmui"]
+[ext_resource type="Texture2D" uid="uid://bu5vjp0f81bfm" path="res://Assets/Scenes/Sprites/grass_3.png" id="6_e6f3x"]
+[ext_resource type="Texture2D" uid="uid://dehflkq1t6es0" path="res://Assets/Scenes/Sprites/bush_2.png" id="6_nve7l"]
+[ext_resource type="Texture2D" uid="uid://ccxjkde800h8d" path="res://Assets/Scenes/Sprites/bush_1.png" id="7_hy2qp"]
+[ext_resource type="Texture2D" uid="uid://0aoxn56ca20x" path="res://Assets/Scenes/Sprites/ground_5.png" id="7_orowc"]
+[ext_resource type="Texture2D" uid="uid://bd0v8ku38ahhw" path="res://Assets/Scenes/Sprites/ground_6.png" id="8_txqaj"]
+[ext_resource type="Texture2D" uid="uid://wulvml10faue" path="res://Assets/Scenes/Sprites/ground_7.png" id="9_vu1if"]
+[ext_resource type="Texture2D" uid="uid://ckw6uysttiv4p" path="res://Assets/Scenes/Sprites/ground_8.png" id="10_iedpi"]
+[ext_resource type="Texture2D" uid="uid://daa5okxij8psi" path="res://Assets/Scenes/Sprites/ground_9.png" id="11_acrny"]
+[ext_resource type="PackedScene" uid="uid://lnwm6bg73g7w" path="res://Assets/Scenes/Character/character_body_2d.tscn" id="12_f6n8j"]
+[ext_resource type="Texture2D" uid="uid://yhjhjbnc748c" path="res://Assets/Scenes/Sprites/sky_cloud.png" id="13_k7an7"]
+[ext_resource type="Texture2D" uid="uid://c01v6w2t866rc" path="res://Assets/Scenes/Sprites/pine1.png" id="14_qvmui"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nve7l"]
+texture = ExtResource("1_u2qlx")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hy2qp"]
+texture = ExtResource("2_f6n8j")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obenw"]
+texture = ExtResource("3_8gu1k")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xg2b0"]
+texture = ExtResource("4_k7an7")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8prjv"]
+texture = ExtResource("5_qvmui")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_13ih7"]
+texture = ExtResource("6_e6f3x")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qm7yc"]
+texture = ExtResource("7_orowc")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -0.8992939, 1.7985878)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gs23n"]
+texture = ExtResource("8_txqaj")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5agx"]
+texture = ExtResource("9_vu1if")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 3.4173164, 2.8777409, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5p4v1"]
+texture = ExtResource("10_iedpi")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a2gov"]
+texture = ExtResource("11_acrny")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_wbmtu"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_nve7l")
+sources/1 = SubResource("TileSetAtlasSource_hy2qp")
+sources/2 = SubResource("TileSetAtlasSource_xg2b0")
+sources/3 = SubResource("TileSetAtlasSource_8prjv")
+sources/4 = SubResource("TileSetAtlasSource_13ih7")
+sources/5 = SubResource("TileSetAtlasSource_qm7yc")
+sources/6 = SubResource("TileSetAtlasSource_gs23n")
+sources/7 = SubResource("TileSetAtlasSource_m5agx")
+sources/8 = SubResource("TileSetAtlasSource_5p4v1")
+sources/9 = SubResource("TileSetAtlasSource_a2gov")
+sources/10 = SubResource("TileSetAtlasSource_obenw")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0quhb"]
+texture = ExtResource("6_e6f3x")
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qxkw8"]
+sources/0 = SubResource("TileSetAtlasSource_0quhb")
+
+[node name="Area1" type="Node2D"]
+position = Vector2(1, 0)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -80.0
+offset_top = -640.0
+offset_right = 1072.0
+offset_bottom = 8.0
+color = Color(0.46666667, 0.6745098, 0.8, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="SkyCloud" type="Sprite2D" parent="."]
+position = Vector2(488.99997, -260)
+scale = Vector2(1.6943129, 1.6943128)
+texture = ExtResource("13_k7an7")
+
+[node name="Pine1" type="Sprite2D" parent="."]
+position = Vector2(499.00006, -18.000008)
+scale = Vector2(1.7596588, 1.3614864)
+texture = ExtResource("14_qvmui")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(248, -105)
+texture = ExtResource("3_vu1if")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+position = Vector2(462, -200)
+texture = ExtResource("3_vu1if")
+
+[node name="Rock2" type="Sprite2D" parent="."]
+position = Vector2(457, -160)
+texture = ExtResource("4_iedpi")
+
+[node name="Rock1" type="Sprite2D" parent="."]
+position = Vector2(318, -112)
+texture = ExtResource("5_acrny")
+
+[node name="Bush2" type="Sprite2D" parent="."]
+position = Vector2(251, -64)
+texture = ExtResource("6_nve7l")
+
+[node name="Bush1" type="Sprite2D" parent="."]
+position = Vector2(-2, -16)
+texture = ExtResource("7_hy2qp")
+
+[node name="TileLayer1" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_wbmtu")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 1, 0, 1, 9, 0, 2, 1, 0, 3, 9, 0, 4, 1, 0, 5, 9, 0, 6, 9, 0, 7, 1, 0, 8, 9, 0, 9, 1, 0, 10, 9, 0, 11, 2, 0, -131059, 5, 0, -131058, 6, 0, -131057, 6, 0, -131056, 6, 0, -131055, 7, 0, -196591, 2, 0, -196595, 0, 0, -196594, 1, 0, -196593, 1, 0, -196592, 1, 0, -393197, 0, 0, -393196, 1, 0, -393195, 1, 0, -393194, 1, 0, -327661, 5, 0, -327658, 6, 0, -327657, 7, 0, -327659, 6, 0, -327660, 6, 0, -393193, 2, 0, -524263, 5, 0, -589799, 0, 0, -589798, 1, 0, -589797, 1, 0, -589796, 1, 0, -589795, 1, 0, -589793, 1, 0, -589794, 1, 0, -589792, 1, 0, -524262, 6, 0, -524261, 6, 0, -524260, 6, 0, -524259, 6, 0, -524258, 6, 0, -524257, 6, 0, -524256, 7, 0, 65535, 0, 0, 65534, 1, 0, 65533, 1, 0, 65532, 0, 0, 65531, 1, 0)
+
+[node name="TileLayer2" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_qxkw8")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 4, 0, 0, 3, 0, 0, 5, 0, 0, -196595, 0, 0, -196594, 0, 0, -196593, 0, 0, -196592, 0, 0, -196591, 0, 0, 6, 0, 0, 7, 0, 0, 9, 0, 0, 8, 0, 0, 10, 0, 0, 11, 0, 0, -393197, 0, 0, -393196, 0, 0, -393195, 0, 0, -393194, 0, 0, -393193, 0, 0, -589799, 0, 0, -589798, 0, 0, -589797, 0, 0, -589795, 0, 0, -589796, 0, 0, -589794, 0, 0, -589793, 0, 0, -589792, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0)
+
+[node name="CharacterBody2D" parent="TileLayer2" instance=ExtResource("12_f6n8j")]
