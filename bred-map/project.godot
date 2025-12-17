@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bred Map"
-run/main_scene="uid://1s8m0lnqjp5j"
+run/main_scene="uid://fm5kiltr8kt3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
