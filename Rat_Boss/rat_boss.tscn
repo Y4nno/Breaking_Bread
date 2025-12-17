@@ -1,0 +1,146 @@
+[gd_scene load_steps=25 format=3 uid="uid://c104lieblutjf"]
+
+[ext_resource type="Script" uid="uid://cfyghj8u2i84b" path="res://character_body_2d.gd" id="1_dypdt"]
+[ext_resource type="Texture2D" uid="uid://7qctml7g1k61" path="res://Boss_Rat_Sprites/Attack1.png" id="2_cvou8"]
+[ext_resource type="Texture2D" uid="uid://cbte16rxhmwk2" path="res://Boss_Rat_Sprites/Attack2.png" id="3_b78lo"]
+[ext_resource type="Texture2D" uid="uid://tndc4q6podnw" path="res://Boss_Rat_Sprites/Attack3.png" id="4_jbtye"]
+[ext_resource type="Texture2D" uid="uid://cx6pg3nane61l" path="res://Boss_Rat_Sprites/Attack4.png" id="5_sxu83"]
+[ext_resource type="Texture2D" uid="uid://c82lqw70v03kq" path="res://Boss_Rat_Sprites/Attack5.png" id="6_mfwba"]
+[ext_resource type="Texture2D" uid="uid://b0ik4vliy2bn7" path="res://Boss_Rat_Sprites/Death1.png" id="7_ouxk0"]
+[ext_resource type="Texture2D" uid="uid://cd7k53fd47gy2" path="res://Boss_Rat_Sprites/Death2.png" id="8_vb652"]
+[ext_resource type="Texture2D" uid="uid://cubkr1na374o5" path="res://Boss_Rat_Sprites/Death3.png" id="9_mwfev"]
+[ext_resource type="Texture2D" uid="uid://d1rpd0ocalvbi" path="res://Boss_Rat_Sprites/Death4.png" id="10_3sun7"]
+[ext_resource type="Texture2D" uid="uid://d0pbcwrpr7bfb" path="res://Boss_Rat_Sprites/Hurt1.png" id="11_a2iui"]
+[ext_resource type="Texture2D" uid="uid://vlpipkoqtgyw" path="res://Boss_Rat_Sprites/Hurt2.png" id="12_kaktc"]
+[ext_resource type="Texture2D" uid="uid://bac3wcqu0n7b4" path="res://Boss_Rat_Sprites/Idle1.png" id="13_8m7bv"]
+[ext_resource type="Texture2D" uid="uid://cvnf8ge1db64x" path="res://Boss_Rat_Sprites/Idle2.png" id="14_eg7ur"]
+[ext_resource type="Texture2D" uid="uid://d1ffirf6o4pnn" path="res://Boss_Rat_Sprites/Idle3.png" id="15_jri2k"]
+[ext_resource type="Texture2D" uid="uid://cpeqk66pu8kgk" path="res://Boss_Rat_Sprites/Idle4.png" id="16_qsvmq"]
+[ext_resource type="Texture2D" uid="uid://bedkiint3268v" path="res://Boss_Rat_Sprites/Walk1.png" id="17_ueek5"]
+[ext_resource type="Texture2D" uid="uid://b78ai5tlbe8us" path="res://Boss_Rat_Sprites/Walk2.png" id="18_celud"]
+[ext_resource type="Texture2D" uid="uid://bwxhtwkvqb1vb" path="res://Boss_Rat_Sprites/Walk3.png" id="19_7kbyt"]
+[ext_resource type="Texture2D" uid="uid://b3i3238kmlbe4" path="res://Boss_Rat_Sprites/Walk4.png" id="20_5f88y"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kri63"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cvou8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b78lo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jbtye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sxu83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mfwba")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ouxk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vb652")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mwfev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3sun7")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_a2iui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_kaktc")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_8m7bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_eg7ur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_jri2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qsvmq")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ueek5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_celud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_7kbyt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_5f88y")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sw26k"]
+radius = 25.1794
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc8ds"]
+size = Vector2(95, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t6i7v"]
+radius = 500.0
+
+[node name="Rat_Boss" type="CharacterBody2D"]
+script = ExtResource("1_dypdt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kri63")
+animation = &"walk"
+frame = 3
+frame_progress = 0.691095
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, -9)
+shape = SubResource("CircleShape2D_sw26k")
+
+[node name="AttackArea" type="Area2D" parent="."]
+position = Vector2(-0.25, -11)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(-0.75, -0.5)
+shape = SubResource("RectangleShape2D_tc8ds")
+
+[node name="Detection Area" type="Area2D" parent="."]
+position = Vector2(-0.25, -11)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Area"]
+shape = SubResource("CircleShape2D_t6i7v")
+
+[node name="CooldownTimer" type="Timer" parent="."]
+autostart = true
