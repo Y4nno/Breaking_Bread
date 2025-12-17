@@ -1,0 +1,127 @@
+[gd_scene load_steps=21 format=3 uid="uid://ceqyismnkvyfp"]
+
+[ext_resource type="Script" uid="uid://di6l7vt4p5yx5" path="res://character_body_2d.gd" id="1_ebjds"]
+[ext_resource type="Texture2D" uid="uid://cltmms5jtmtof" path="res://Mini_rat/Attack1.png" id="2_y1dt5"]
+[ext_resource type="Texture2D" uid="uid://c5tuai4x821av" path="res://Mini_rat/Attack2.png" id="3_au0nh"]
+[ext_resource type="Texture2D" uid="uid://dtlt1aw0xh1e5" path="res://Mini_rat/Attack3.png" id="4_76bt2"]
+[ext_resource type="Texture2D" uid="uid://b8ns5wdhmfsol" path="res://Mini_rat/Attack4.png" id="5_sxias"]
+[ext_resource type="Texture2D" uid="uid://cavgv4f0m6k2h" path="res://Mini_rat/Death1.png" id="6_ucfvk"]
+[ext_resource type="Texture2D" uid="uid://d4i2apmuxwxfl" path="res://Mini_rat/Death2.png" id="7_2dyae"]
+[ext_resource type="Texture2D" uid="uid://bwlipe7u8cxp8" path="res://Mini_rat/Death3.png" id="8_2u5n8"]
+[ext_resource type="Texture2D" uid="uid://dhg32ekqs3uul" path="res://Mini_rat/Death4.png" id="9_73nau"]
+[ext_resource type="Texture2D" uid="uid://okrfxtsen2up" path="res://Mini_rat/Hurt1.png" id="10_skrk8"]
+[ext_resource type="Texture2D" uid="uid://d3isrmgrh0l2o" path="res://Mini_rat/Hurt2.png" id="11_ye16i"]
+[ext_resource type="Texture2D" uid="uid://d4lqgujinwq8g" path="res://Mini_rat/Idle1.png" id="12_75u2t"]
+[ext_resource type="Texture2D" uid="uid://dmabc6d3vrqmc" path="res://Mini_rat/Idle2.png" id="13_7qa1u"]
+[ext_resource type="Texture2D" uid="uid://d3ougmp7bvgue" path="res://Mini_rat/Walk1-sheet.png" id="14_8gu1l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsgy1"]
+atlas = ExtResource("14_8gu1l")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_el80s"]
+atlas = ExtResource("14_8gu1l")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxcm1"]
+atlas = ExtResource("14_8gu1l")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ltww1"]
+atlas = ExtResource("14_8gu1l")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_186t8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_y1dt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_au0nh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_76bt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_sxias")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ucfvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2dyae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2u5n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_73nau")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_skrk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ye16i")
+}],
+"loop": true,
+"name": &"Hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_75u2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7qa1u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsgy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el80s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxcm1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ltww1")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a7mna"]
+radius = 4.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_ebjds")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_186t8")
+animation = &"walk"
+frame = 1
+frame_progress = 0.197662
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+position = Vector2(-2, 4)
+shape = SubResource("CircleShape2D_a7mna")
+
+[node name="DirectionTimer" type="Timer" parent="AnimatedSprite2D/CollisionShape2D"]
+autostart = true
