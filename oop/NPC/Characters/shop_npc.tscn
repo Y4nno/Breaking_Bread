@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://8goxh7ywhsrs"]
+
+[ext_resource type="Script" uid="uid://b31p02vrhx1gm" path="res://NPC/Characters/shop_npc.gd" id="1_vj0k3"]
+[ext_resource type="Texture2D" uid="uid://bc1be5kw1uyur" path="res://NPC/Characters/Characters/001-sheet.png" id="2_rry1w"]
+[ext_resource type="PackedScene" uid="uid://bmipjlpos1y3n" path="res://NPC/Characters/actionable_shop.tscn" id="3_rry1w"]
+[ext_resource type="Resource" uid="uid://ctllqy4m8wxc3" path="res://NPC/Dialogue/Shop.dialogue" id="4_vh72w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vh72w"]
+atlas = ExtResource("2_rry1w")
+region = Rect2(0, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fjg4"]
+atlas = ExtResource("2_rry1w")
+region = Rect2(48, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm45w"]
+atlas = ExtResource("2_rry1w")
+region = Rect2(96, 0, 48, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnu6e"]
+atlas = ExtResource("2_rry1w")
+region = Rect2(144, 0, 48, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnu6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vh72w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fjg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pm45w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnu6e")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vh72w"]
+size = Vector2(31, 37)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rry1w"]
+radius = 7.0
+height = 36.0
+
+[node name="ShopNPC" type="CharacterBody2D"]
+disable_mode = 1
+script = ExtResource("1_vj0k3")
+
+[node name="animated_shop" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cnu6e")
+animation = &"idle"
+frame_progress = 0.46657383
+
+[node name="actionableShop" parent="animated_shop" instance=ExtResource("3_rry1w")]
+collision_layer = 16
+collision_mask = 0
+dialogue_resource = ExtResource("4_vh72w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="animated_shop/actionableShop"]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_vh72w")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_rry1w")

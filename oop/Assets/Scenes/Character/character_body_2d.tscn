@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://lnwm6bg73g7w"]
+
+[ext_resource type="Script" uid="uid://c67vu3yg51n70" path="res://Assets/Scritps/character_body_2d_control.gd" id="1_c2cei"]
+[ext_resource type="Texture2D" uid="uid://mr7xtulnl1fs" path="res://Assets/Scenes/Sprites/attack-01.png" id="1_hucc4"]
+[ext_resource type="PackedScene" uid="uid://cual1odomepsh" path="res://NPC/Characters/actionable.tscn" id="2_a3rvd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c2cei"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2wwru"]
+size = Vector2(11, 26)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_c2cei")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -15)
+shape = SubResource("CapsuleShape2D_c2cei")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -6)
+zoom = Vector2(3, 3)
+
+[node name="Anims" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anims"]
+root_node = NodePath("../..")
+
+[node name="Sprite2D" type="Sprite2D" parent="Anims"]
+position = Vector2(3, -17)
+texture = ExtResource("1_hucc4")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="ActionableFinder" parent="Direction" instance=ExtResource("2_a3rvd")]
+position = Vector2(-2, -15)
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
+position = Vector2(10, 0)
+shape = SubResource("RectangleShape2D_2wwru")
