@@ -15,6 +15,15 @@ run/main_scene="uid://fm5kiltr8kt3"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManagement="*res://Assets/Scritps/game_management.gd"
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_17="transitions"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
