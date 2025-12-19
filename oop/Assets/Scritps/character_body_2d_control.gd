@@ -1,16 +1,9 @@
 extends CharacterBody2D
+class_name PlayerController
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
-@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
-func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_key_pressed(KEY_E):
-		var actionables = actionable_finder.get_overlapping_areas()
-		if actionables.size() > 0:
-			actionables[0].action()
-			return
-	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -18,7 +11,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_key_pressed(KEY_SPACE) and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

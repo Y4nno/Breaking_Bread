@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://boexkwcvjyti5"]
+
+[ext_resource type="Texture2D" uid="uid://b02ah6w73x7bq" path="res://Assets/Scenes/SpriteCastle/Dimensional_Portal.png" id="1_2ah70"]
+[ext_resource type="Script" uid="uid://b4kdx3fwjwler" path="res://Assets/Scritps/portal.gd" id="1_ngk0o"]
+
+[sub_resource type="Animation" id="Animation_2ah70"]
+resource_name = "idle"
+length = 1.25
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 32), Rect2(32, 0, 32, 32), Rect2(64, 0, 32, 32), Rect2(64, 32, 32, 32), Rect2(32, 32, 32, 32), Rect2(0, 32, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_ngk0o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0w2x"]
+_data = {
+&"RESET": SubResource("Animation_ngk0o"),
+&"idle": SubResource("Animation_2ah70")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ah70"]
+radius = 6.0
+height = 32.0
+
+[node name="Portal" type="Area2D"]
+collision_layer = 65536
+script = ExtResource("1_ngk0o")
+
+[node name="Animator" type="Node2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animator"]
+libraries = {
+&"": SubResource("AnimationLibrary_a0w2x")
+}
+autoplay = "idle"
+
+[node name="Sprite2D" type="Sprite2D" parent="Animator"]
+texture = ExtResource("1_2ah70")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_2ah70")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

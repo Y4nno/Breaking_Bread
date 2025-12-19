@@ -16,7 +16,7 @@ const KNOCKBACK_FORCE: float = 300.0
 # =========================
 var health: int = 300
 var max_health: int = 300
-var damage_to_deal: int = 20
+var damage_to_deal: int = 15
 
 var dead: bool = false
 var is_chasing: bool = false
@@ -192,7 +192,7 @@ func die() -> void:
 	attack_collision.disabled = true
 	attack_area.monitoring = false
 	velocity = Vector2.ZERO
-	sprite.play("death")
+	sprite.play("Death")
 
 	await sprite.animation_finished
 	queue_free()

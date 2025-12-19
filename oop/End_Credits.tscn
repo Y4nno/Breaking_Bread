@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://oxo4bagkexdy"]
+
+[ext_resource type="VideoStream" uid="uid://blptc40p0vnjo" path="res://Credits/End-Credits.ogv" id="1_k12e2"]
+[ext_resource type="Script" uid="uid://d286vedg6d8xl" path="res://end_credits.gd" id="1_vq50g"]
+[ext_resource type="AudioStream" uid="uid://xfoufsyg72y7" path="res://Music/wicked-x-god-is-full-version-kanye-west-x-defying-gravity_XCkShbIR.mp3" id="3_lleii"]
+
+[node name="EndCredits" type="Node2D"]
+script = ExtResource("1_vq50g")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -956.0
+offset_top = -538.0
+offset_right = 964.0
+offset_bottom = 542.0
+stream = ExtResource("1_k12e2")
+autoplay = true
+
+[node name="Camera2D" type="Camera2D" parent="VideoStreamPlayer"]
+position = Vector2(956, 537)
+zoom = Vector2(0.66, 0.66)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lleii")
+volume_db = -15.0
+autoplay = true

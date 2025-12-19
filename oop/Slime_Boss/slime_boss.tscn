@@ -97,7 +97,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("18_twl48")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 5.0
 }, {
@@ -189,9 +189,7 @@ script = ExtResource("1_h2che")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_vspf8")
-animation = &"Attack"
-frame = 6
-frame_progress = 0.348843
+animation = &"Death"
 
 [node name="HurtBox" type="CollisionShape2D" parent="."]
 position = Vector2(3, -2)

@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="OOP"
-run/main_scene="uid://fm5kiltr8kt3"
+run/main_scene="uid://5fvu64m11u7b"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameManagement="*res://Assets/Scritps/game_management.gd"
 
 [editor_plugins]
 

@@ -1,7 +1,5 @@
 extends CharacterBody2D
-
 class_name Player
-
 signal healthChanged
 
 # ===== NODE REFERENCES =====
@@ -11,7 +9,7 @@ signal healthChanged
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
 # ===== MOVEMENT CONSTANTS =====
 const SPEED = 200
-const JUMP_POWER = -350.0
+const JUMP_POWER = -450.0
 var gravity = 900
 
 # ===== COMBAT & STATE VARIABLES =====
@@ -19,7 +17,7 @@ var is_attacking = false
 var weapon_equip: bool
 var is_hit = false
 var knockback_force = 50
-var health = 100
+var health = 150
 var can_take_damage = true
 var is_dead = false
 var spawn_position: Vector2

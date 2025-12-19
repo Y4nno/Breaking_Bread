@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cc6r30yo8g5sa"]
+[gd_scene load_steps=49 format=3 uid="uid://cc6r30yo8g5sa"]
 
 [ext_resource type="Script" uid="uid://c6o2n6duy6hnn" path="res://Script/character_body_2d.gd" id="1_4sjlk"]
 [ext_resource type="Texture2D" uid="uid://ba7egdw8ijvqe" path="res://Artwork/Dacian Warrior Animated Pixel-Art 2D/Dacian Warrior Animated Pixel-Art 2D/Dead/50x50/Dead 1 Sprite Sheet.png" id="1_lhvu3"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://38cblrecxd6x" path="res://Artwork/Dacian Warrior Animated Pixel-Art 2D/Dacian Warrior Animated Pixel-Art 2D/Idle/50x50/Idle Sprite 0.png" id="3_qp52p"]
 [ext_resource type="Texture2D" uid="uid://n34mgfuaayi2" path="res://Artwork/Dacian Warrior Animated Pixel-Art 2D/Dacian Warrior Animated Pixel-Art 2D/Attack/50x50/Attack 0-1 Sprite Sheet.png" id="5_1kp85"]
 [ext_resource type="Texture2D" uid="uid://cik343fsnou2l" path="res://Artwork/Dacian Warrior Animated Pixel-Art 2D/Dacian Warrior Animated Pixel-Art 2D/Run/50x50/Run Sprite 2.png" id="6_qnedo"]
+[ext_resource type="Texture2D" uid="uid://dl1e0r45rcv7a" path="res://NPC/Assets/healthbarUnder.png" id="7_6ct3r"]
+[ext_resource type="Texture2D" uid="uid://muiihd08cnvg" path="res://NPC/Assets/healthbarProgress.png" id="8_1kp85"]
+[ext_resource type="Script" uid="uid://bta5l5q354rwa" path="res://NPC/Scripts/progress_bar.gd" id="9_qnedo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wyqjk"]
 atlas = ExtResource("1_lhvu3")
@@ -330,6 +333,19 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
 position = Vector2(15, 6)
 shape = SubResource("RectangleShape2D_4sjlk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
+anchors_preset = -1
+offset_right = 161.0
+offset_bottom = 28.0
+fill_mode = 1
+nine_patch_stretch = true
+texture_under = ExtResource("7_6ct3r")
+texture_progress = ExtResource("8_1kp85")
+script = ExtResource("9_qnedo")
+player = NodePath("../..")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

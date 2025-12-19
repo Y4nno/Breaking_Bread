@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2qrvpghiv4ub"]
+
+[ext_resource type="AudioStream" uid="uid://j7kaiybjr3ve" path="res://Music/Konosuba Season 1 OST #01 - The Adventure Begins.mp3" id="1_bt7f1"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_bt7f1")
+autoplay = true

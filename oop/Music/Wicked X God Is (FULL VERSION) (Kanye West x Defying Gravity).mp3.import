@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://s5uk8if13m8"
+path="res://.godot/imported/Wicked X God Is (FULL VERSION) (Kanye West x Defying Gravity).mp3-c5d56ff0f803667428096fe9716a23fa.mp3str"
+
+[deps]
+
+source_file="res://Music/Wicked X God Is (FULL VERSION) (Kanye West x Defying Gravity).mp3"
+dest_files=["res://.godot/imported/Wicked X God Is (FULL VERSION) (Kanye West x Defying Gravity).mp3-c5d56ff0f803667428096fe9716a23fa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

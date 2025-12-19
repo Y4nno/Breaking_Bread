@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
 @export var player: Node2D
+signal boss_defeated
 
 const SPEED = 40.0
 const GRAVITY = 900.0
 const CHASE_DISTANCE = 500.0
 const ATTACK_DISTANCE = 50.0
-const MAX_HEALTH = 100
+const MAX_HEALTH = 500
 
 var health = MAX_HEALTH
 var is_dead = false
@@ -31,6 +32,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
+		_on_defeated()
 		velocity = Vector2.ZERO
 		move_and_slide()
 		return
@@ -100,7 +102,7 @@ func _on_attack_hitbox_body_entered(body: Node2D) -> void:
 		target = body.get_parent()
 
 	if target.is_in_group("player") and target.has_method("take_damage"):
-		target.take_damage(10, global_position)
+		target.take_damage(25, global_position)
 
 func take_damage(amount: int, _attacker_pos: Vector2 = Vector2.ZERO) -> void:
 	if is_dead:
@@ -121,3 +123,10 @@ func take_damage(amount: int, _attacker_pos: Vector2 = Vector2.ZERO) -> void:
 		animated_sprite.play("Death")
 	else:
 		animated_sprite.play("Hurt")
+		
+func _on_defeated() -> void:
+	print("Called")
+	
+	await get_tree().create_timer(1.5).timeout
+	
+	boss_defeated.emit()

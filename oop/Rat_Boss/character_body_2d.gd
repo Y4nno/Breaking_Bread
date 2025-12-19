@@ -8,7 +8,7 @@ class_name RatBoss
 
 const SPEED := 120
 const GRAVITY := 900
-const ATTACK_DAMAGE := 30
+const ATTACK_DAMAGE := 20
 const ATTACK_COOLDOWN := 1.2
 const ATTACK_RANGE := 70
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bl8p5rnq3xabh"
+path="res://.godot/imported/Elden Ring.mp3-ad0afd0d7befd2d7bf8c6de0ec1a70a3.mp3str"
+
+[deps]
+
+source_file="res://Music/Elden Ring.mp3"
+dest_files=["res://.godot/imported/Elden Ring.mp3-ad0afd0d7befd2d7bf8c6de0ec1a70a3.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
